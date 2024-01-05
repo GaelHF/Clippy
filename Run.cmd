@@ -1,5 +1,6 @@
 @echo off
 echo Installing Packages...
 pip install -r packages.txt
-python AI.py
+cls
+python Clippy.py
 pause
