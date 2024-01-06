@@ -39,6 +39,7 @@ def help():
     print(crayons.blue("   - Clippy image to letters (ASCII ART)"))
     print(crayons.blue("   - Clippy download youtube (Opens YouTool)"))
     print(crayons.blue("   - Clippy talk (AI)"))
+    print(crayons.blue("   - Clippy clock (Creates timer)"))
     print(crayons.blue("   - Clippy go to [url] (Opens web page)"))
     print(crayons.blue("   - Clippy search for [search] (Make a Google Research)"))
     print(crayons.blue("   - Clippy help (displays commands)"))
