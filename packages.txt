@@ -7,3 +7,4 @@ pygame==2.3.0
 crayons==0.4.0
 tk==0.1.0
 pytube==15.0.0
+win10toast==0.9

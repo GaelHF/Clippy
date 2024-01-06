@@ -1,0 +1,56 @@
+
+![Logo](https://github.com/GaelHF/Clippy/blob/main/clippy.png?raw=true)
+
+
+# Clippy
+
+Do you remember me ? I was serving you in Windows 97.
+
+## Author
+
+- [@GaelHF](https://www.github.com/GaelHF)
+
+
+## Library
+
+To use Clippy you will need:
+- speechrecognition / 3.10.1
+- pyttsx3 / 2.90
+- google.cloud.texttospeech / 2.15.1
+- PyAudio / 0.2.14
+- ascii_magic / 2.3.0
+- pygame / 2.3.0
+- crayons / 0.4.0
+- tk / 0.1.0
+- pytube / 15.0.0
+
+You can install them with
+```bash
+pip install [library]
+```
+
+or with
+
+```bash
+pip install -r packages.txt
+```
+
+or you can execute the Run.cmd file
+## Using
+
+To talk to Clippy just say his name, like Siri or Alexa
+
+Here are a few commands:
+
+```Clippy go to youtube dot com```
+
+(Opens [YouTube](https://www.youtube.com/))
+
+```Clippy search for dog```
+
+(Opens a Google Research)
+
+```Clippy download YouTube```
+
+(Opens [YouTool](https://github.com/GaelHF/YouTool))
+

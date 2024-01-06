@@ -11,6 +11,16 @@ import crayons
 import webbrowser
 import ascii_magic
 import os
+import threading
+from win10toast import ToastNotifier
+import config
+
+def timer(seconds):
+    time.sleep(seconds)
+    print(crayons.blue("TIME IS UP !"))
+    notif = ToastNotifier()
+    speak("TIME IS UP !")
+    notif.show_toast('Clippy', 'Your Timer is Done', icon_path='./clippy.ico', duration=3)
 
 ERROR_HANDLER_FUNC = CFUNCTYPE(None, c_char_p, c_int, c_char_p, c_int, c_char_p)
 
@@ -32,15 +42,14 @@ def noalsaerr():
 
 ### PARAMETERS ###
 #Browser
-browser_path  = "C:\Program Files\Opera\opera.exe"
-webbrowser.register('web', None, webbrowser.BackgroundBrowser(browser_path))
+webbrowser.register('web', None, webbrowser.BackgroundBrowser(config.browser_path))
 
-activationWords = ['clippy', 'creepy', "computer", "sleepy"]
+activationWords = config.activate_names
 tts_type = 'local'
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[0].id) # 0=Homme,1=Femme
+engine.setProperty('voice', voices[config.Voice].id) # 0=Homme,1=Femme
 
 # Google TTS client
 def google_text_to_wav(voice_name: str, text: str):
@@ -115,7 +124,8 @@ def speak(text, rate = 120):
         return
     
 if __name__ == '__main__':
-
+    print(crayons.yellow("Clippy coded by: @GaelHF"))
+    print(crayons.blue("My GitHub: https://github.com/GaelHF"))
     if os.path.exists('./clippy.png'):
         clippy = ascii_magic.from_image('./clippy.png')
         clippy.to_terminal(columns=60)
@@ -128,6 +138,10 @@ if __name__ == '__main__':
             query[0] = 'clippy'
         if query[0] == 'clippy' and len(query) > 1:
             query.pop(0)
+
+            #HELP
+            if query[0] == "help":
+                Commands.help()
 
             #ASCII ART
             if query[0] == 'image' and query[1] == 'to' and query[2] == 'letters':
@@ -153,6 +167,22 @@ if __name__ == '__main__':
             #YouTool
             if query[0] == "download" and query[1] == "youtube":
                 Commands.open_youtool()
+
+
+            #AI
+            if query[0] == "talk":
+                Commands.talk_to_an_ai()
+
+            #Clock
+            if query[0] == "clock":
+                mins = input('Minutes : ')
+                if mins:
+                    sec = float(mins) * 60
+                    timer_thread = threading.Thread(target=timer, args=(sec,))
+                    timer_thread.start()
+                else:
+                    print(crayons.cyan("Please put a valid number of minutes."))
+                    speak("Please put a valid number of minutes.")
 
 
             #Conversation
