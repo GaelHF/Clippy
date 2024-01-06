@@ -18,6 +18,20 @@ def url_to_ascii(link):
         print(crayons.red("Please mention a valid url !"))
         speak("Please mention a valid url !")
 
+def smash():
+    try:
+        ascii_image = ascii_magic.from_image("./smash.jpg")
+        ascii_image.to_terminal(columns=200)
+        speak("SMASH !!!")
+    except Exception as e:
+        print(crayons.red(f"Error {e}"))
+
+def map():
+    if os.path.exists('./map.py'):
+        os.system('python map.py')
+    else:
+        print(crayons.red("Map file not found!"))
+
 def open_youtool():
     if os.path.exists('youtool.py'):
         print(crayons.green("Opening YouTool..."))
@@ -40,6 +54,7 @@ def help():
     print(crayons.blue("   - Clippy download youtube (Opens YouTool)"))
     print(crayons.blue("   - Clippy talk (AI)"))
     print(crayons.blue("   - Clippy clock (Creates timer)"))
+    print(crayons.blue("   - Clippy map (Google Maps)"))
     print(crayons.blue("   - Clippy go to [url] (Opens web page)"))
     print(crayons.blue("   - Clippy search for [search] (Make a Google Research)"))
     print(crayons.blue("   - Clippy help (displays commands)"))

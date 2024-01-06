@@ -150,6 +150,8 @@ if __name__ == '__main__':
                     Commands.url_to_ascii(lien)
                 else:
                     print(crayons.red("Error: Please enter a valid URL !"))
+            if query[0] == 'smash':
+                Commands.smash()
 
             # Web
             if query[0] == 'go' and query[1] == 'to':
@@ -168,6 +170,9 @@ if __name__ == '__main__':
             if query[0] == "download" and query[1] == "youtube":
                 Commands.open_youtool()
 
+            #Terravision
+            if query[0] == "map":
+                Commands.map()
 
             #AI
             if query[0] == "talk":

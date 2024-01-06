@@ -23,6 +23,10 @@ To use Clippy you will need:
 - crayons / 0.4.0
 - tk / 0.1.0
 - pytube / 15.0.0
+- win10toast / 0.9
+- tkintermapview / 1.29
+- packaging / 23.2
+- customtkinter / 5.2.1
 
 You can install them with
 ```bash
