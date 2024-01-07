@@ -143,6 +143,10 @@ if __name__ == '__main__':
             if query[0] == "help":
                 Commands.help()
 
+            if query[0] in config.commandhandler:
+                command = config.commandhandler[query[0]]
+                command()
+
             #ASCII ART
             if query[0] == 'image' and query[1] == 'to' and query[2] == 'letters':
                 lien = input('Image URL : ')

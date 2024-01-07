@@ -10,6 +10,18 @@ Do you remember me ? I was serving you in Windows 97.
 
 - [@GaelHF](https://www.github.com/GaelHF)
 
+## Command Handler
+You can create your own commands in config.py add a function and **1** word for your command
+```py
+#Command Handler
+
+#Command Exemple
+def functionName():
+    print("This is a command exemple")
+
+commandhandler = {
+    'yourCom
+```
 
 ## Library
 
