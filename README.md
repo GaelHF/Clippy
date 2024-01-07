@@ -20,7 +20,8 @@ def functionName():
     print("This is a command exemple")
 
 commandhandler = {
-    'yourCom
+    'yourCommandWord': functionName
+}
 ```
 
 ## Library
